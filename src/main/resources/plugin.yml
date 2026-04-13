@@ -1,0 +1,43 @@
+name: PunisherXX
+version: 1.1.0
+main: dev.domin.punisher.PunisherPlugin
+api-version: '1.21'
+author: domin
+description: Config-driven punish/warn/ban/kick/mute plugin.
+
+commands:
+  punish:
+    description: Run a configured punishment type against a player.
+    usage: /punish <type|reload> <player> [reason]
+  warn:
+    description: Add warning to player.
+    usage: /warn <player> [time] [reason]
+  pban:
+    description: Ban a player using plugin ban logic.
+    usage: /pban <player> <time> [reason]
+  pkick:
+    description: Kick player using plugin kick logic.
+    usage: /pkick <player> [reason]
+  pmute:
+    description: Mute a player using plugin mute logic.
+    usage: /pmute <player> <time> [reason]
+
+permissions:
+  punisher.punish:
+    description: Access to /punish command.
+    default: op
+  punisher.warn:
+    description: Access to /warn command.
+    default: op
+  punisher.ban:
+    description: Access to /pban command.
+    default: op
+  punisher.kick:
+    description: Access to /pkick command.
+    default: op
+  punisher.mute:
+    description: Access to /pmute command.
+    default: op
+  punisher.reload:
+    description: Access to /punish reload.
+    default: op

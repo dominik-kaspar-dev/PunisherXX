@@ -1,0 +1,25 @@
+# Maven build output
+/target/
+/out/
+
+# Java bytecode
+*.class
+
+# Logs
+*.log
+
+# IntelliJ IDEA
+/.idea/
+*.iml
+
+# VS Code workspace settings
+/.vscode/
+
+# Eclipse
+/.settings/
+/.classpath
+/.project
+
+# OS files
+.DS_Store
+Thumbs.db

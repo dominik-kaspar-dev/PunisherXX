@@ -1,0 +1,64 @@
+permissions:
+  punish: punisher.punish
+  punish-type-template: punisher.punish.%type%
+  warn: punisher.warn
+  ban: punisher.ban
+  kick: punisher.kick
+  mute: punisher.mute
+  reload: punisher.reload
+
+defaults:
+  punish-reason: No reason provided.
+  warn-reason: Staff warning.
+  ban-reason: Punished by staff.
+  kick-reason: Removed by staff.
+  mute-reason: Muted by staff.
+
+# You can define punishment actions two ways:
+# 1) With actions list and optional custom permission:
+#    xray:
+#      permission: punisher.punish.xray
+#      actions:
+#        - "kill %player%"
+#        - "clear %player%"
+#        - "pban 30d %reason%"
+# 2) As a direct list (uses punish-type-template permission):
+#    spam:
+#      - "pkick %reason%"
+punish:
+  xray:
+    permission: punisher.punish.xray
+    actions:
+      - "kill %player%"
+      - "clear %player%"
+      - "pban 30d %reason%"
+
+warnings:
+  default-duration: 30d
+  reset-on-ban: false
+  escalation:
+    "3":
+      duration: 7d
+      reason: Reached 3 active warnings.
+    "5":
+      duration: 30d
+      reason: Reached 5 active warnings.
+
+messages:
+  no-permission: "&cYou do not have permission."
+  player-required: "&cYou must target a valid player name."
+  invalid-duration: "&cInvalid duration. Use values like 30m, 12h, 7d, 2w or perm."
+  punish-not-found: "&cPunish type '&f%type%&c' is not configured."
+  punish-executed: "&aApplied '&f%type%&a' to &f%player%&a."
+  warn-added: "&eWarning added to &f%player%&e. Active warnings: &f%count%&e."
+  warn-notify: "&cYou were warned by %actor%: %reason%"
+  ban-applied: "&aBanned &f%player%&a for &f%duration%&a."
+  kick-applied: "&aKicked &f%player%&a."
+  kick-message: "&cYou were kicked: %reason%"
+  mute-applied: "&aMuted &f%player%&a for &f%duration%&a."
+  mute-notify: "&cYou were muted by %actor% for %duration%: %reason%"
+  mute-blocked: "&cYou are muted for %duration%. &7Reason: %reason%"
+  ban-message: "&cYou are banned for %duration%\n&7Reason: %reason%"
+  ban-screen: "&cYou are banned for %duration%\n&7Reason: %reason%\n&7By: %actor%"
+  unbanned-expired: "&aYour ban expired."
+  reloaded: "&aPunisher config reloaded."
