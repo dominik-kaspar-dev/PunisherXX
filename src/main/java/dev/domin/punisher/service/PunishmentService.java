@@ -109,6 +109,27 @@ public class PunishmentService {
         }
     }
 
+    public boolean unbanPlayer(UUID uuid) {
+        return store.removeBan(uuid);
+    }
+
+    public boolean unmutePlayer(UUID uuid, String actor) {
+        boolean removed = store.removeMute(uuid);
+        if (!removed) {
+            return false;
+        }
+
+        Player online = Bukkit.getPlayer(uuid);
+        if (online != null) {
+            online.sendMessage(message("unmute-notify", Map.of(
+                    "%player%", online.getName(),
+                    "%actor%", safe(actor)
+            )));
+        }
+
+        return true;
+    }
+
     public int warnPlayer(UUID uuid, String playerName, Duration duration, String reason, String actor) {
         long now = System.currentTimeMillis();
         long expiresAt = (duration == null || duration.isZero()) ? 0L : now + duration.toMillis();
@@ -252,6 +273,14 @@ public class PunishmentService {
             handleMuteAction(resolvedAction, target, playerName, reason, actor);
             return;
         }
+        if (lowerAction.startsWith("punban") || lowerAction.startsWith("logic-unban")) {
+            handleUnbanAction(target);
+            return;
+        }
+        if (lowerAction.startsWith("punmute") || lowerAction.startsWith("logic-unmute")) {
+            handleUnmuteAction(target, actor);
+            return;
+        }
         if (lowerAction.startsWith("pwarn") || lowerAction.startsWith("logic-warn")) {
             handleWarnAction(resolvedAction, target, playerName, reason, actor);
             return;
@@ -336,6 +365,14 @@ public class PunishmentService {
         }
 
         warnPlayer(target.getUniqueId(), playerName, duration, reason, actor);
+    }
+
+    private void handleUnbanAction(OfflinePlayer target) {
+        unbanPlayer(target.getUniqueId());
+    }
+
+    private void handleUnmuteAction(OfflinePlayer target, String actor) {
+        unmutePlayer(target.getUniqueId(), actor);
     }
 
     private List<String> resolvePunishActions(String type) {

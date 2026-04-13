@@ -7,7 +7,7 @@ It supports custom punish types, warning escalation, and built-in ban, kick, and
 ## Why PunisherXX
 
 - Config-driven punish flows for different rule breaks
-- Built-in action keywords for warning, kicking, banning, and muting
+- Built-in action keywords for warning, kicking, banning, unbanning, muting, and unmuting
 - Warning escalation rules (example: 3 warnings -> temporary ban)
 - Timed punishments with human-friendly durations like 30m, 12h, 7d, 2w, or perm
 - Permission-node friendly design for LuckPerms and similar permission plugins
@@ -21,6 +21,8 @@ It supports custom punish types, warning escalation, and built-in ban, kick, and
 - /pban <player> <time> [reason]
 - /pkick <player> [reason]
 - /pmute <player> <time> [reason]
+- /punban <player>
+- /punmute <player>
 
 ## Permissions
 
@@ -31,6 +33,8 @@ Default nodes:
 - punisher.ban
 - punisher.kick
 - punisher.mute
+- punisher.unban
+- punisher.unmute
 - punisher.reload
 
 Dynamic node template:

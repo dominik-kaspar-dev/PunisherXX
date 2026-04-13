@@ -5,6 +5,8 @@ permissions:
   ban: punisher.ban
   kick: punisher.kick
   mute: punisher.mute
+  unban: punisher.unban
+  unmute: punisher.unmute
   reload: punisher.reload
 
 defaults:
@@ -56,7 +58,12 @@ messages:
   kick-applied: "&aKicked &f%player%&a."
   kick-message: "&cYou were kicked: %reason%"
   mute-applied: "&aMuted &f%player%&a for &f%duration%&a."
+  unban-applied: "&aUnbanned &f%player%&a."
+  unban-not-found: "&e%player% is not currently banned."
+  unmute-applied: "&aUnmuted &f%player%&a."
+  unmute-not-found: "&e%player% is not currently muted."
   mute-notify: "&cYou were muted by %actor% for %duration%: %reason%"
+  unmute-notify: "&aYou were unmuted by %actor%."
   mute-blocked: "&cYou are muted for %duration%. &7Reason: %reason%"
   ban-message: "&cYou are banned for %duration%\n&7Reason: %reason%"
   ban-screen: "&cYou are banned for %duration%\n&7Reason: %reason%\n&7By: %actor%"

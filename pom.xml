@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dominik-kaspar-dev</groupId>
+    <groupId>com.punisherxx</groupId>
     <artifactId>punisherxx</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <name>PunisherXX</name>
     <description>Config-driven punishment plugin for Paper 1.21.x</description>
 

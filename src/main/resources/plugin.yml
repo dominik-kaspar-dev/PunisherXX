@@ -1,8 +1,8 @@
 name: PunisherXX
-version: 1.1.0
-main: dev.domin.punisher.PunisherPlugin
-api-version: '1.21'
-author: domin
+version: 1.2.0
+main: com.punisher
+api-version: "1.21"
+author: dominik-kaspar-dev
 description: Config-driven punish/warn/ban/kick/mute plugin.
 
 commands:
@@ -21,6 +21,12 @@ commands:
   pmute:
     description: Mute a player using plugin mute logic.
     usage: /pmute <player> <time> [reason]
+  punban:
+    description: Remove an active plugin ban from a player.
+    usage: /punban <player>
+  punmute:
+    description: Remove an active plugin mute from a player.
+    usage: /punmute <player>
 
 permissions:
   punisher.punish:
@@ -37,6 +43,12 @@ permissions:
     default: op
   punisher.mute:
     description: Access to /pmute command.
+    default: op
+  punisher.unban:
+    description: Access to /punban command.
+    default: op
+  punisher.unmute:
+    description: Access to /punmute command.
     default: op
   punisher.reload:
     description: Access to /punish reload.

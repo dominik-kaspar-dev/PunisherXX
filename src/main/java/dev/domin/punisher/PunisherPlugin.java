@@ -3,6 +3,8 @@ package dev.domin.punisher;
 import dev.domin.punisher.command.PBanCommand;
 import dev.domin.punisher.command.PKickCommand;
 import dev.domin.punisher.command.PMuteCommand;
+import dev.domin.punisher.command.PUnbanCommand;
+import dev.domin.punisher.command.PUnmuteCommand;
 import dev.domin.punisher.command.PunishCommand;
 import dev.domin.punisher.command.WarnCommand;
 import dev.domin.punisher.listener.PlayerChatListener;
@@ -34,6 +36,8 @@ public class PunisherPlugin extends JavaPlugin {
         bindCommand("pban", new PBanCommand(this, punishmentService));
         bindCommand("pkick", new PKickCommand(this, punishmentService));
         bindCommand("pmute", new PMuteCommand(this, punishmentService));
+        bindCommand("punban", new PUnbanCommand(this, punishmentService));
+        bindCommand("punmute", new PUnmuteCommand(this, punishmentService));
 
         getServer().getPluginManager().registerEvents(new PlayerLoginListener(punishmentService), this);
         getServer().getPluginManager().registerEvents(new PlayerChatListener(punishmentService), this);

@@ -5,10 +5,11 @@ PunisherXX is a Paper 1.21.x plugin with configurable punishment flows, warning 
 ## Features
 
 - Config-driven `/punish` command with custom punishment types.
-- Built-in `pban`, `pkick`, `pmute`, and `pwarn` action keywords.
+- Built-in `pban`, `pkick`, `pmute`, `punban`, `punmute`, and `pwarn` action keywords.
 - `/warn <player> [time] [reason]` with timed warnings.
 - Automatic escalation (example: 3 warnings => 7 day ban).
 - Built-in `/pban`, `/pkick`, and `/pmute` commands.
+- Built-in `/punban` and `/punmute` reversal commands.
 - Persistent punishments in `plugins/PunisherXX/data.yml`.
 
 ## Commands
@@ -19,6 +20,8 @@ PunisherXX is a Paper 1.21.x plugin with configurable punishment flows, warning 
 - `/pban <player> <time> [reason]`
 - `/pkick <player> [reason]`
 - `/pmute <player> <time> [reason]`
+- `/punban <player>`
+- `/punmute <player>`
 
 ## LuckPerms Permissions
 
@@ -30,6 +33,8 @@ All nodes are configurable in `config.yml`:
 - `punisher.ban`
 - `punisher.kick`
 - `punisher.mute`
+- `punisher.unban`
+- `punisher.unmute`
 - `punisher.reload`
 
 ## Example Config Style (your requested format)
