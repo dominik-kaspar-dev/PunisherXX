@@ -1,5 +1,6 @@
 package dev.domin.punisher.command;
 
+import dev.domin.punisher.PunisherPlugin;
 import dev.domin.punisher.service.PunishmentService;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -40,7 +41,11 @@ public class PunishCommand implements CommandExecutor, TabCompleter {
                 return true;
             }
 
-            plugin.reloadConfig();
+            if (plugin instanceof PunisherPlugin punisherPlugin) {
+                punisherPlugin.reloadPluginConfig();
+            } else {
+                plugin.reloadConfig();
+            }
             punishmentService.reload();
             sender.sendMessage(punishmentService.message("reloaded", Map.of()));
             return true;

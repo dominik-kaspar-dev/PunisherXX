@@ -5,7 +5,7 @@
 
     <groupId>com.punisherxx</groupId>
     <artifactId>punisherxx</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <name>PunisherXX</name>
     <description>Config-driven punishment plugin for Paper 1.21.x</description>
 

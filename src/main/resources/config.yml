@@ -1,3 +1,5 @@
+config-version: "1.2.1"
+
 permissions:
   punish: punisher.punish
   punish-type-template: punisher.punish.%type%
